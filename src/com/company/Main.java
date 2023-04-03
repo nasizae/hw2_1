@@ -3,6 +3,28 @@ package com.company;
 import java.util.Random;
 
 public class Main {
+    public static void main(String[] args){
+        //Дз
+        //3. В методе main вызвать написанный метод 5 раз с различными входными данными
+        //(аргументами) и распечатать результат в консоль.
+        String rez=  Walk(25,89);
+        System.out.println(rez);
+        rez=  Walk(25,20);
+        System.out.println(rez);
+        rez=  Walk(45,20);
+        System.out.println(rez);
+        rez=  Walk(30,45);
+        System.out.println(rez);
+        rez=  Walk(23,24);
+        System.out.println(rez);
+        //Дз на сообразительность
+        System.out.println("---------------------------------------------------------------");
+       //5. При вызове метода, который формирует результат “можно ли идти гулять”
+        //использовать генерирование случайного возраста с помощью метода
+        //“generateRandomAge” test(23, 10); test(generateRandomAge(), 10);
+        rez=  Walk(generateRandomAge(),24);
+        System.out.println(rez);
+    }
 
 
     public static String Walk(int age,int temperature){
@@ -19,39 +41,27 @@ public class Main {
          if(age<20&&temperature>0&&temperature<28){
              return rezult;
          }
-         if(age>45){
-             if(temperature>-10&&temperature<25){
+         //c. а если человеку больше 45 лет, то результат “Можно идти гулять”
+        //формируется только тогда когда на улице температура в диапазоне от -10
+        //до 25 градусов;
+         if(age>45&&temperature>-10&&temperature<25){
                  return rezult;
-             }
          }
+         //d. В остальных случаях метод должен возвращать результат - “Оставайтесь
+         //дома”;
          else{
              return rezult2;
          }
-        return null;
 
 
     }
+    //4. Написать метод в котором генерируется случайный возраст public static int
+    //generateRandomAge(){........}
     public static int generateRandomAge(){
         Random random=new Random();
         int age;
-        age=random.nextInt(10,35);
+        age=random.nextInt(5,35);
         return age;
     }
-    public static void main(String[] args){
-        //Дз
-      String rez=  Walk(25,89);
-        System.out.println(rez);
-        rez=  Walk(25,20);
-        System.out.println(rez);
-        rez=  Walk(45,20);
-        System.out.println(rez);
-        rez=  Walk(30,45);
-        System.out.println(rez);
-        rez=  Walk(23,24);
-        System.out.println(rez);
-        //Дз на сообразительность
-        System.out.println("---------------------------------------------------------------");
-        rez=  Walk(generateRandomAge(),24);
-        System.out.println(rez);
-    }
+
 }
